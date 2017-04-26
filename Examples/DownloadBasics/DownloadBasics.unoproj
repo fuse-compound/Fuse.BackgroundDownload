@@ -1,0 +1,13 @@
+{
+  "Packages": [
+    "Fuse",
+    "FuseJS",
+    "Fuse.BasicTheme"
+  ],
+  "Projects": [
+    "../../src/Fuse.BackgroundDownload.unoproj",
+  ],
+  "Includes": [
+    "*",
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "Packages": [
+    "Fuse",
+    "FuseJS",
+  ],
+  "Includes": [
+    "*",
+    "DownloadDelegate.h:ObjCHeader:iOS",
+    "DownloadDelegate.mm:ObjCSource:iOS",
+    "AppDelegateDownloadListener.h:ObjCHeader:iOS",
+    "AppDelegateDownloadListener.mm:ObjCSource:iOS"
+  ]
+}
