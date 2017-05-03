@@ -12,6 +12,9 @@
 			<Text Value="Download Test" Alignment="Center" FontSize="35" TextColor="#2586EC"/>
 
 			<Basic.Button Text="Start Download" Clicked="{startDownload}" />
+			<Basic.Button Text="Stop Download" Clicked="{stopDownload}" />
+			<Basic.Button Text="Pause Download" Clicked="{pauseDownload}" />
+			<Basic.Button Text="Resume Download" Clicked="{resumeDownload}" />
 
 			<TextView Value="{info}" Height="200" TextWrapping="Wrap"/>
 		</StackPanel>

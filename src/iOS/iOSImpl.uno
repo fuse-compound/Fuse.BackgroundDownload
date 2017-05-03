@@ -63,7 +63,7 @@ namespace Fuse.BackgroundDownload
         @}
 
         [Foreign(Language.ObjC)]
-        internal static ulong resumeDownload(ulong downloadID)
+        internal static ulong ResumeDownload(ulong downloadID)
         @{
             return (@{ulong})[@{_downloadDelegate} resumeDownload:@{IDToPaused(ulong):Call(downloadID)}];
         @}
@@ -97,6 +97,7 @@ namespace Fuse.BackgroundDownload
 
         static void RecieveSuccessfulCompletion(ulong taskIdentifier, string finalPath)
         {
+            _ongoingDownloads.Remove(taskIdentifier);
             var handler = OnSucceeded;
             if (handler != null)
                 handler(taskIdentifier, finalPath);
@@ -104,15 +105,10 @@ namespace Fuse.BackgroundDownload
 
         static void RecieveErroredCompletion(ulong taskIdentifier, string errorMessage)
         {
+            _ongoingDownloads.Remove(taskIdentifier);
             var handler = OnFailed;
             if (handler != null)
                 handler(taskIdentifier, errorMessage);
         }
-    }
-
-    public static extern(!iOS) class BackgroundDownload
-    {
-        internal static void Initialize() {}
-        internal static void StartDownload(string urlStr) {}
     }
 }

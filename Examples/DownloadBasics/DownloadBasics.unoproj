@@ -4,6 +4,9 @@
     "FuseJS",
     "Fuse.BasicTheme"
   ],
+  "Android": {
+    "AllowBackup" : true
+  },
   "Projects": [
     "../../src/Fuse.BackgroundDownload.unoproj",
   ],

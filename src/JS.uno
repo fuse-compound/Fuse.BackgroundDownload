@@ -64,7 +64,7 @@ namespace Fuse.BackgroundDownload
 		{
 			ulong id = 0;
 			if (ULong.TryParse((string)args[0], out id))
-				BackgroundDownload.PauseDownload(id);
+				return BackgroundDownload.ResumeDownload(id).ToString();;
 			return null;
 		}
 

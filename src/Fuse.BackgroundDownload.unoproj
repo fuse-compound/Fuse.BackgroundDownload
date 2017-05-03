@@ -5,9 +5,17 @@
   ],
   "Includes": [
     "*",
-    "DownloadDelegate.h:ObjCHeader:iOS",
-    "DownloadDelegate.mm:ObjCSource:iOS",
-    "AppDelegateDownloadListener.h:ObjCHeader:iOS",
-    "AppDelegateDownloadListener.mm:ObjCSource:iOS"
+    "Dummy/Impl.uno",
+    "Android/AndroidImpl.uno",
+    "Android/BackgroundDownloader.java:Java:android",
+    "Android/DownloadRunnable.java:Java:android",
+    "Android/PausedDownload.java:Java:android",
+    "Android/CompleteDownload.java:Java:android",
+    "Android/ProgressData.java:Java:android",
+    "iOS/iOSImpl.uno:Source",
+    "iOS/DownloadDelegate.h:ObjCHeader:iOS",
+    "iOS/DownloadDelegate.mm:ObjCSource:iOS",
+    "iOS/AppDelegateDownloadListener.h:ObjCHeader:iOS",
+    "iOS/AppDelegateDownloadListener.mm:ObjCSource:iOS"
   ]
 }
