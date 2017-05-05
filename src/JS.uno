@@ -71,25 +71,21 @@ namespace Fuse.BackgroundDownload
 		// feedback
 		void OnProgress(ulong taskIdentifier, ulong totalBytesWritten, ulong totalBytesExpectedToWrite)
 		{
-			debug_log "OnProgress";
 			Emit(new object[] { "progress", taskIdentifier.ToString(), (double)totalBytesWritten, (double)totalBytesExpectedToWrite });
 		}
 
 		void OnPaused(ulong taskIdentifier)
 		{
-			debug_log "OnPaused";
 			Emit(new object[] { "changed", "paused", taskIdentifier.ToString() });
 		}
 
 		void OnSucceeded(ulong taskIdentifier, string finalPath)
 		{
-			debug_log "OnSucceeded";
 			Emit(new object[] { "changed", "succeeded", taskIdentifier.ToString(), finalPath });
 		}
 
 		void OnFailed(ulong taskIdentifier, string errorMsg)
 		{
-			debug_log "OnFailed";
 			Emit(new object[] { "changed", "failed", taskIdentifier.ToString(), errorMsg });
 		}
 	}
