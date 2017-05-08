@@ -7,8 +7,6 @@ using Uno.Compiler.ExportTargetInterop;
 using Uno.Compiler.ExportTargetInterop.Android;
 using Fuse.Scripting;
 
-// {TODO} Recieve* naming is weird, change it
-
 namespace Fuse.BackgroundDownload
 {
     [Require("Entity", "BackgroundDownload.RecieveDownloadPaused(int)")]

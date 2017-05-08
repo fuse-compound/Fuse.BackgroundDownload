@@ -6,8 +6,6 @@ using Uno.Collections;
 using Uno.Compiler.ExportTargetInterop;
 using Fuse.Scripting;
 
-// {TODO} Recieve* naming is weird, change it
-
 namespace Fuse.BackgroundDownload
 {
     // [Require("uContext.SourceFile.DidFinishLaunching", "[self initializeLocalNotifications:[notification object]];")]
