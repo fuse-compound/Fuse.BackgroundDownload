@@ -78,6 +78,7 @@ public class DownloadRunnable implements Runnable
         long downloadFromByte = 0;
         int lengthOfFile = 0;
         FileOutputStream outputStream;
+        Runnable outTask = null;
 
         if (_outputFile == null)
         {
@@ -130,9 +131,18 @@ public class DownloadRunnable implements Runnable
                     }
                     outputStream.write(data, 0, bytesReadThisIteration);
 
-                    if (HandleInboundRequests() != CONTINUE)
+                    final int inbound = HandleInboundRequests();
+                    if (inbound != CONTINUE)
                     {
                         outputStream.flush();
+                        outTask = new Runnable()
+                        {
+                            @Override public void run()
+                            {
+                                if (inbound!=PAUSE)
+                                    TryDeletingFile();
+                            }
+                        };
                         return;
                     }
                 }
@@ -147,7 +157,15 @@ public class DownloadRunnable implements Runnable
         finally
         {
             outputStream.close();
+            if (outTask!=null)
+                outTask.run();
         }
+    }
+
+    private void TryDeletingFile()
+    {
+        if (_outputFile.exists())
+            _outputFile.delete();
     }
 
     private int HandleInboundRequests() throws Exception
