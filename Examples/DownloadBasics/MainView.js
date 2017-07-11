@@ -33,12 +33,12 @@ Downloader.on("paused", function(kind, downloadID) {
     console.log(kind + " - " + downloadID);
 });
 
-Downloader.on("succeeded", function(kind, downloadID, finalPath) {
-    console.log(kind + " - " + downloadID + ": " + finalPath);
+Downloader.on("succeeded", function(downloadID, finalPath) {
+    console.log("success! - " + downloadID + ": " + finalPath);
 });
 
-Downloader.on("failed", function(kind, downloadID, errorMessage) {
-    console.log(kind + " - " + downloadID + ": " + errorMessage);
+Downloader.on("failed", function(downloadID, errorMessage) {
+    console.log("failure :( - " + downloadID + ": " + errorMessage);
 });
 
 module.exports = {
