@@ -5,11 +5,9 @@ var lastDownloadID = -1;
 var info = Observable("");
 
 var startDownload = function() {
-    console.log("Fcukeroo");
-    // lastDownloadID = Downloader.start("http://i.imgur.com/F49TZOI.gif");
+    console.log("Starting");
     lastDownloadID = Downloader.start("http://download.thinkbroadband.com/20MB.zip");
-    // lastDownloadID = Downloader.start("http://download.thinkbroadband.com/100MB.zip");
-    console.log("Fcukeroo'd " + lastDownloadID);
+    console.log("Started " + lastDownloadID);
 };
 
 var stopDownload = function() {
