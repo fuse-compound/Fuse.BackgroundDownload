@@ -90,7 +90,7 @@ namespace Fuse.BackgroundDownload
         {
             var handler = OnPaused;
             if (handler != null)
-                handler(taskIdentifier);
+                handler((ulong)taskIdentifier);
         }
 
         [ForeignFixedName]
@@ -98,7 +98,7 @@ namespace Fuse.BackgroundDownload
         {
             var handler = OnProgress;
             if (handler != null)
-                handler(taskIdentifier, totalBytesWritten, totalBytesExpectedToWrite);
+                handler((ulong)taskIdentifier, (ulong)totalBytesWritten, (ulong)totalBytesExpectedToWrite);
         }
 
         [ForeignFixedName]
@@ -106,7 +106,7 @@ namespace Fuse.BackgroundDownload
         {
             var handler = OnSucceeded;
             if (handler != null)
-                handler(taskIdentifier, finalPath);
+                handler((ulong)taskIdentifier, finalPath);
         }
 
         [ForeignFixedName]
@@ -114,7 +114,7 @@ namespace Fuse.BackgroundDownload
         {
             var handler = OnFailed;
             if (handler != null)
-                handler(taskIdentifier, errorMessage);
+                handler((ulong)taskIdentifier, errorMessage);
         }
     }
 }

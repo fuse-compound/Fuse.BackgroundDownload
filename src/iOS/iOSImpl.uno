@@ -89,7 +89,7 @@ namespace Fuse.BackgroundDownload
                 if (totalBytesExpectedToWrite== UNKNOWN_SIZE)
                     handler(taskIdentifier, totalBytesWritten, totalBytesExpectedToWrite);
                 else
-                    handler(taskIdentifier, -1, -1);
+                    handler(taskIdentifier, (ulong)-1, (ulong)-1);
             }
         }
 
